@@ -1,0 +1,8 @@
+submit:
+    send: envoyer
+    create: créer %value%
+    delete: supprimer
+    update: Modifier
+    category: categorie
+    movie: film
+    actor: Acteur

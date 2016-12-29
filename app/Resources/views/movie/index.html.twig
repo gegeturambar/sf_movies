@@ -1,0 +1,74 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block body %}
+
+    <table id="movie" class="table table-striped">
+        <th>{{ "title" | trans | capitalize }}</th>
+        <th>{{ "slug" | trans | capitalize }}</th>
+        <th>{{ "category" | trans | capitalize }}</th>
+        <th>{{ "poster" | trans | capitalize }}</th>
+        <th>{{ "actors" | trans | capitalize }}</th>
+        <th>{{ 'movie.update' | trans | capitalize }}</th>
+        <th>{{ 'movie.delete' | trans | capitalize }}</th>
+        <tr class="movie" id="movie_{{ mov.id }}">
+            <td>
+                <a href="{{ url("app.movie.view", { "id" : mov.id,"slug" : mov.slug}) }}" >{{ mov.title }}</a>
+            </td>
+            <td>
+                {{ mov.slug }}
+            </td>
+            <td>
+                {{ mov.category.name }}
+            </td>
+            <td>
+                <img src="{{ '/upload/' ~ mov.poster }}">
+            </td>
+            <td>
+                {% for act in mov.actors %}
+                    <p>{{ act.firstname ~ " " ~ act.lastname }} </p>
+                {% endfor %}
+            </td>
+            <td><a href="{{ url("app.admin.movie.form.update", { "id" : mov.id }) }}" class="btn btn-info">{{ 'movie.update' | trans | capitalize }}</a></td>
+            <td><a href="{{ url("app.admin.movie.form.delete", { "id" : mov.id }) }}" class="btn btn-danger">{{ 'movie.delete' | trans | capitalize }}</a></td>
+            <td><button class="btn addTobasket" data-id="{{ mov.id }}" data-price="{{ mov.price }}">{{ 'basket.add' | trans | capitalize }}</button></td>
+
+        </tr>
+    </table>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/basket.js') }}"></script>
+    <script>
+        let basket = new Basket();
+        basket.init("{{ url("app.basket.add",{ "id" : 999 }) }}","{{ url("app.basket.remove",{ "id" : 999 }) }}");
+    </script>
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
+    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 21px; margin-bottom: 1em; }
+    p { margin: 0 0 1em 0; }
+    a { color: #0000F0; }
+    a:hover { text-decoration: none; }
+    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
+    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
+    #container { padding: 2em; }
+    #welcome, #status { margin-bottom: 2em; }
+    #welcome h1 span { display: block; font-size: 75%; }
+    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
+    #icon-book { display: none; }
+
+    @media (min-width: 768px) {
+        #wrapper { width: 80%; margin: 2em auto; }
+        #icon-book { display: inline-block; }
+        #status a, #next a { display: block; }
+
+        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+    }
+</style>
+{% endblock %}

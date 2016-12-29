@@ -1,0 +1,60 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block body %}
+
+    {% set action = form.vars.value.id %}
+
+
+
+
+    <h2>{{ 'movie.movie' | trans }}</h2>
+    {# debut du formulaire #}
+    {{ form_start(form, { 'attr':{ 'novalidate':'novalidate'} } ) }}
+
+    <p>
+        {{ form_label(form.title, 'movie.title' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.title) }}
+    </p>
+
+    <p>
+        {{ form_label(form.poster, 'movie.poster' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.poster) }}
+    </p>
+    {{ form_errors(form.poster) }}
+
+    <p>
+        {{ form_label(form.releaseDate, 'movie.releaseDate' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.releaseDate) }}
+    </p>
+
+    <p>
+        {{ form_label(form.category, 'category' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.category) }}
+    </p>
+
+    <p>
+        {{ form_label(form.price, 'price' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.price) }}
+    </p>
+
+    <p>
+        {{ form_label(form.actors, 'movie.actors' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.actors) }}
+    </p>
+
+    {%  set buttontext = 'submit.movie' | trans({}, 'forms') %}
+
+    {% if action is not null %}
+        <input type="submit" value="{{ 'submit.update' | trans({'%value%' : buttontext},'forms') }}">
+    {% else %}
+        <input type="submit" value="{{ 'submit.create' | trans({'%value%' : buttontext},'forms') }}">
+    {% endif %}
+
+    {{ form_errors(form.title) }}
+    {# fin du formulaire #}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

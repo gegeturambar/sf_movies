@@ -1,0 +1,5 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+#prefix => variable d'url avec la locale, variable existant de base dans symfony => entre {} , c'est une variable
+    prefix: /{_locale}

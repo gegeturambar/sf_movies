@@ -1,0 +1,9 @@
+AppBundle\Entity\Actor:
+    actor{1..10}:
+        firstName: <firstname()>
+        lastName: <name()>
+        slug: <new getSlug(@self->firstName @self->lastName)>
+        bio: <text()>
+        birthday: <DateTimeThisCentury()>
+        movies: <numberBetween(1,4)>x @movie*
+

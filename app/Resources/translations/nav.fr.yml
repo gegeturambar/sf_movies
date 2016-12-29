@@ -1,0 +1,11 @@
+nav:
+    category_manage: Gérer les catégories
+    category_list: Liste des catégories
+    category_create: Créer une catégorie
+    movie_manage: Gérer les films
+    movie_list: Liste des films
+    movie_create: Créer un film
+    actor_manage: Gérer les acteurs
+    actor_list: Liste des acteurs
+    actor_create: Créer un acteurs
+    user_create: Créer un utilisateur

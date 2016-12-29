@@ -1,0 +1,61 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block body %}
+
+    {{ dump(form) }}
+    {% set action = form.vars.value.id %}
+
+
+
+
+    <h2>{{ 'actor.actor' | trans }}</h2>
+    {# debut du formulaire #}
+    {{ form_start(form, { 'attr':{ 'novalidate':'novalidate'} } ) }}
+
+    <p>
+        {{ form_label(form.firstName, 'firstname' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.firstName) }}
+    </p>
+
+    <p>
+        {{ form_label(form.lastName, 'lastname' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.lastName) }}
+    </p>
+
+    <p>
+        {{ form_label(form.portrait, 'portrait' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.portrait) }}
+    </p>
+
+    <p>
+        {{ form_label(form.birthday, 'birthday' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.birthday) }}
+    </p>
+
+    <p>
+        {{ form_label(form.bio, 'bio' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.bio) }}
+    </p>
+
+    <p>
+        {{ form_label(form.movies, 'movies' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.movies) }}
+    </p>
+
+
+    {%  set buttontext = 'submit.actor' | trans({}, 'forms') %}
+
+    {% if action is not null %}
+        <input type="submit" value="{{ 'submit.update' | trans({'%value%' : buttontext},'forms') }}">
+    {% else %}
+        <input type="submit" value="{{ 'submit.create' | trans({'%value%' : buttontext},'forms') }}">
+    {% endif %}
+
+    {{ form_errors(form.firstName) }}
+    {# fin du formulaire #}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
