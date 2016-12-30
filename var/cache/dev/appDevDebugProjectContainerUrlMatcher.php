@@ -106,7 +106,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // app.admin.actor.index
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/actor/?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/actor/?$#s', $pathinfo, $matches)) {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'app.admin.actor.index');
             }
@@ -115,22 +115,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // app.admin.actor.form
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/actor/form$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/actor/form$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.admin.actor.form')), array (  'id' => NULL,  '_controller' => 'AppBundle\\Controller\\AdminActorController::formAction',));
         }
 
         // app.admin.actor.form.update
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/actor/form/update(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/actor/form/update(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.admin.actor.form.update')), array (  'id' => NULL,  '_controller' => 'AppBundle\\Controller\\AdminActorController::formAction',));
         }
 
         // app.admin.actor.form.delete
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/actor/form/delete(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/actor/form/delete(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.admin.actor.form.delete')), array (  'id' => NULL,  '_controller' => 'AppBundle\\Controller\\AdminActorController::deleteAction',));
         }
 
         // app.admin.category.index
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/category/?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/category/?$#s', $pathinfo, $matches)) {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'app.admin.category.index');
             }
@@ -139,22 +139,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // app.admin.category.form
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/category/form$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/category/form$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.admin.category.form')), array (  'id' => NULL,  '_controller' => 'AppBundle\\Controller\\AdminCategoryController::formAction',));
         }
 
         // app.admin.category.form.update
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/category/form/update(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/category/form/update(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.admin.category.form.update')), array (  'id' => NULL,  '_controller' => 'AppBundle\\Controller\\AdminCategoryController::formAction',));
         }
 
         // app.admin.category.form.delete
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/category/form/delete(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/category/form/delete(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.admin.category.form.delete')), array (  'id' => NULL,  '_controller' => 'AppBundle\\Controller\\AdminCategoryController::deleteAction',));
         }
 
         // app.admin.index
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/?$#s', $pathinfo, $matches)) {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'app.admin.index');
             }
@@ -163,7 +163,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // app.admin.movie.index
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/movie/?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/movie/?$#s', $pathinfo, $matches)) {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'app.admin.movie.index');
             }
@@ -172,37 +172,37 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // app.admin.movie.form
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/movie/form$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/movie/form$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.admin.movie.form')), array (  'id' => NULL,  '_controller' => 'AppBundle\\Controller\\AdminMovieController::formAction',));
         }
 
         // app.admin.movie.form.update
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/movie/form/update(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/movie/form/update(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.admin.movie.form.update')), array (  'id' => NULL,  '_controller' => 'AppBundle\\Controller\\AdminMovieController::formAction',));
         }
 
         // app.admin.movie.form.delete
-        if (preg_match('#^/(?P<_locale>[^/]++)/admin/movie/form/delete(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/admin/movie/form/delete(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.admin.movie.form.delete')), array (  'id' => NULL,  '_controller' => 'AppBundle\\Controller\\AdminMovieController::deleteAction',));
         }
 
         // app.basket.view
-        if (preg_match('#^/(?P<_locale>[^/]++)/basket/basket$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/basket/basket$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.basket.view')), array (  '_controller' => 'AppBundle\\Controller\\BasketController::viewAction',));
         }
 
         // app.basket.remove
-        if (preg_match('#^/(?P<_locale>[^/]++)/basket/basket/remove/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/basket/basket/remove/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.basket.remove')), array (  '_controller' => 'AppBundle\\Controller\\BasketController::removeAction',));
         }
 
         // app.basket.add
-        if (preg_match('#^/(?P<_locale>[^/]++)/basket/basket/add/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/basket/basket/add/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.basket.add')), array (  '_controller' => 'AppBundle\\Controller\\BasketController::addAction',));
         }
 
         // app.homepage.index
-        if (preg_match('#^/(?P<_locale>[^/]++)/?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/?$#s', $pathinfo, $matches)) {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'app.homepage.index');
             }
@@ -211,43 +211,81 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // app.movie.view
-        if (preg_match('#^/(?P<_locale>[^/]++)/movie/movie/(?P<id>\\d+)\\-(?P<slug>\\D+)$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/movie/movie/(?P<id>\\d+)\\-(?P<slug>\\D+)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.movie.view')), array (  '_controller' => 'AppBundle\\Controller\\MovieController::viewAction',));
         }
 
         // app.order.finalisation
-        if (preg_match('#^/(?P<_locale>[^/]++)/basket/order/finalisation$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/basket/order/finalisation$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.order.finalisation')), array (  '_controller' => 'AppBundle\\Controller\\OrderController::finalisationAction',));
         }
 
         // app.searchmovie.search
-        if (preg_match('#^/(?P<_locale>[^/]++)/searchmovie$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/searchmovie$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.searchmovie.search')), array (  '_controller' => 'AppBundle\\Controller\\SearchMovieController::searchAction',));
         }
 
         // app.searchmovie.ajax
-        if (preg_match('#^/(?P<_locale>[^/]++)/searchajax$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/searchajax$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.searchmovie.ajax')), array (  '_controller' => 'AppBundle\\Controller\\SearchMovieController::ajaxAction',));
         }
 
         // app.security.login
-        if (preg_match('#^/(?P<_locale>[^/]++)/security/login$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/security/login$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.security.login')), array (  '_controller' => 'AppBundle\\Controller\\SecurityController::loginAction',));
         }
 
         // app.security.logout
-        if (preg_match('#^/(?P<_locale>[^/]++)/security/logout$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/security/logout$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.security.logout')), array (  '_controller' => 'AppBundle\\Controller\\SecurityController::logoutAction',));
         }
 
         // app.security.update
-        if (preg_match('#^/(?P<_locale>[^/]++)/security/security/update/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/security/security/update/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.security.update')), array (  '_controller' => 'AppBundle\\Controller\\SecurityController::createAction',));
         }
 
         // app.security.create
-        if (preg_match('#^/(?P<_locale>[^/]++)/security/security/create$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<_locale>fr|en|es)/security/security/create$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app.security.create')), array (  '_controller' => 'AppBundle\\Controller\\SecurityController::createAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/oauth-')) {
+            if (0 === strpos($pathinfo, '/oauth-connect')) {
+                // hwi_oauth_service_redirect
+                if (preg_match('#^/oauth\\-connect/(?P<service>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'hwi_oauth_service_redirect')), array (  '_controller' => 'HWI\\Bundle\\OAuthBundle\\Controller\\ConnectController::redirectToServiceAction',));
+                }
+
+                // hwi_oauth_connect_service
+                if (0 === strpos($pathinfo, '/oauth-connect/service') && preg_match('#^/oauth\\-connect/service/(?P<service>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'hwi_oauth_connect_service')), array (  '_controller' => 'HWI\\Bundle\\OAuthBundle\\Controller\\ConnectController::connectServiceAction',));
+                }
+
+                // hwi_oauth_connect_registration
+                if (0 === strpos($pathinfo, '/oauth-connect/registration') && preg_match('#^/oauth\\-connect/registration/(?P<key>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'hwi_oauth_connect_registration')), array (  '_controller' => 'HWI\\Bundle\\OAuthBundle\\Controller\\ConnectController::registrationAction',));
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/oauth-login')) {
+                // hwi_oauth_connect
+                if (rtrim($pathinfo, '/') === '/oauth-login') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'hwi_oauth_connect');
+                    }
+
+                    return array (  '_controller' => 'HWI\\Bundle\\OAuthBundle\\Controller\\ConnectController::connectAction',  '_route' => 'hwi_oauth_connect',);
+                }
+
+                // google_login
+                if ($pathinfo === '/oauth-login/check-google') {
+                    return array('_route' => 'google_login');
+                }
+
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

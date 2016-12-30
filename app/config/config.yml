@@ -89,3 +89,12 @@ knp_snappy:
         enabled:    true
         binary:     "%kernel.root_dir%/../bin/wkhtmltoimage"
         options:    []
+
+hwi_oauth:
+    firewall_names: [main]
+    resource_owners:
+        google:
+            type:                google
+            client_id:           675884085619-mos8i478dngveh3nukud7ps3klue75jo.apps.googleusercontent.com
+            client_secret:   5d6lqN--bMkbyRo9LLb2yzv4
+            scope:               "email profile"

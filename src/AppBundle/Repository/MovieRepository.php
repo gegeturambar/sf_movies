@@ -152,4 +152,27 @@ class MovieRepository extends \Doctrine\ORM\EntityRepository
         ;
         return $t;
     }
+
+    public function deleteMoviesByYear($year, $older = true){
+        $dql = "DELETE FROM AppBundle:Movie movie WHERE movie.releaseDate ";
+        $dql .= $older ? " < " : " > ";
+        $dql .= " :year";
+
+        $result = $this->getEntityManager()
+            ->createQuery($dql)
+            ->setParameter(':year',$year)
+            ->execute();
+        return $result;
+    }
+
+    public function updateMoviesPrice($rate){
+        $dql = "UPDATE AppBundle:Movie movie SET movie.price = ( movie.price - ( movie.price * :rate / 100 ))";
+
+        $result = $this->getEntityManager()
+            ->createQuery($dql)
+            ->setParameter(':rate',$rate)
+            ->execute();
+        return $result;
+    }
+
 }

@@ -152,6 +152,7 @@ class LoadDataFixturesCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+
         if (false !== strpos($input->getFirstArgument(), 'hautelook_alice:fixtures:load')
             || false !== strpos($input->getFirstArgument(), 'h:f:l')
         ) {
